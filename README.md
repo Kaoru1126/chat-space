@@ -1,11 +1,11 @@
 # DB設計
 ## users table
 
-| Column     | Type        | Options                     |
-|------------|-------------|-----------------------------|
-| name       | string      | null: false, index: true    |
-| mail       | string      | null: false, unique: true   |
-| password   | string      | null: false,                |
+| Column     | Type        | Options                                |
+|------------|-------------|----------------------------------------|
+| name       | string      | null: false, index: true, unique: true |
+| mail       | string      | null: false, unique: true              |
+| password   | string      | null: false,                           |
 
 ### Association
 
@@ -45,7 +45,7 @@
 
 | Column     | Type        | Options                     |
 |------------|-------------|-----------------------------|
-| name       | string      | null: false                 |
+| name       | string      | null: false, unique: true   |
 
 ### Association
 
