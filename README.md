@@ -16,12 +16,12 @@
 
 ## messages table
 
-| Column     | Type        | Options                     |
-|------------|-------------|-----------------------------|
-| body       | text        | null: false                 |
-| image      | string      |                             |
-| user_id    | integer     | null: false                 |
-| group_id   | integer     | null: false                 |
+| Column     | Type        | Options                        |
+|------------|-------------|--------------------------------|
+| body       | text        | null: false                    |
+| image      | string      |                                |
+| user_id    | integer     | null: false, foreign_key: true |
+| group_id   | integer     | null: false  foreign_key: true |
 
 ### Association
 
@@ -30,10 +30,10 @@
 
 ## members table
 
-| Column     | Type        | Options                     |
-|------------|-------------|-----------------------------|
-| user_id    | integer     | null: false                 |
-| group_id   | integer     | null: false                 |
+| Column     | Type        | Options                        |
+|------------|-------------|--------------------------------|
+| user_id    | integer     | null: false, foreign_key: true |
+| group_id   | integer     | null: false, foreign_key: true |
 
 ### Association
 
