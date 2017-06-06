@@ -1,0 +1,72 @@
+$white_text: #FFFFFF;
+$text_b: #434A54;
+
+.side-bar {
+  position: absolute;
+  height: 101px;
+  width: 300px;
+  background-color: #253241;
+     &__bottom {
+     width: 300px;
+     height: calc(100vh - 130px);
+     background-color: #2f3e51;
+     }
+}
+ul {
+  height: 100%;
+}
+
+.uname {
+  color: $white_text;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 35px;
+  margin-bottom: 25px;
+  margin-left: 20px;
+  margin-right:20px;
+  display: inline-block;
+  position: relative;
+}
+
+.icons {
+  color: $white_text;
+  display: inline-block;
+  margin-right: 20px;
+  position: absolute;
+  top: 35px;
+  left: 240px;
+  right: 20px;
+  margin: auto;
+}
+
+.text {
+    font-size: 14px;
+    color: $text_b;
+    margin-top: 80px;
+    float: left;
+    list-style: none;
+ }
+
+.username {
+  font-size: 16px;
+  color: $white_text;
+  margin-right: 20px;
+  margin-left: 20px;
+  padding-top: 35px;
+ }
+
+.groupname {
+  margin-right: 20px;
+  margin-left: 20px;
+  color: $white_text;
+  font-size: 15px;
+  padding-top: 20px;
+  margin-bottom: 5px;
+   &__lastmsg {
+      margin-right: 20px;
+      margin-left: 20px;
+      color: $white_text;
+      font-size: 11px;
+      margin-bottom: 40px;
+    }
+}

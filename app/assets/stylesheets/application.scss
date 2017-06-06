@@ -1,0 +1,114 @@
+@import "./reset";
+@import "font-awesome";
+@import "./sidebar";
+
+$white_text: #FFFFFF;
+$text_b: #434A54;
+
+.head-bar {
+  background-color: #38AEF0;
+  color: white;
+  text-align: center;
+  height: 30px;
+  width: 100vw;
+}
+
+.chat_head {
+  background-color: white;
+  height: 100px;
+  width: calc(100vw - 300px);
+  float: left;
+  padding-left: 300px;
+  border-bottom: 1px solid #eeeeee;
+}
+
+.sampleG {
+  font-size: 20px;
+  color:#333333;
+  margin-top: 35px;
+  margin-left: 40px;
+  margin-bottom: 15px;
+    &__under {
+     font-size: 12px;
+     color: #999999;
+     margin-left: 40px;
+    }
+}
+
+.Edit {
+  color: blue;
+  text-align: right;
+  margin-top: 28px;
+  margin-right: 60px;
+  margin-left: 20px;
+  float: right;
+  line-height: 20px;
+}
+
+.area {
+  background-color: #AAAAAA;
+  height: calc(100vh - writingbox);
+  min-height: calc(600px - 110px);
+  width: calc(100vw - 380px);
+  float: left;
+  padding-top: 46px;
+  padding-left: 40px;
+  padding-right: 40px;
+}
+
+.user {
+  font-size: 16px;
+  font-weight: bold;
+  color: $text_b;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.timestamp {
+  font-size: 12px;
+  color: #999999;
+  display: inline-block;
+ }
+
+.textinchat {
+  font-size: 14px;
+  margin-top: 10px;
+  color: $text_b;
+  margin-bottom: 40px;
+}
+
+.writingbox {
+  width: calc(100vw - 380px);
+  margin-bottom: 20px;
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-left: 40px;
+  overflow: auto;
+  border: solid 1px;
+    &__where {
+      font-size: 16px;
+      color: $text_b;
+      margin-left: 10px;
+      margin-right: 10px;
+      float: left;
+      line-height: 50px;
+      }
+}
+
+.pic {
+  float: right;
+  text-align: center;
+  line-height: 50px;
+  margin-right: 10px;
+}
+
+.sendbuttonbox {
+  background-color: #38AEF0;
+  color: white;
+  height: 50px;
+  width: 100px;
+  float: right;
+  text-align: center;
+  line-height: 50px;
+  margin-left: 15px;
+}
