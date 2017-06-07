@@ -6,10 +6,10 @@ before_action :move_to_index, :except => [:index]
   end
 
   def update
-      user = User.find(params [:id])
-      if user.user_id == current_user.id
-        user.update(user_params)
-      end
+    user = User.find(params [:id])
+    if user.user_id == current_user.id
+      user.update(user_params)
+    end
   end
 
   private
