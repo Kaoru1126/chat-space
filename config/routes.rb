@@ -3,5 +3,6 @@ Rails.application.routes.draw do
    root 'messages#index'
 
    # User情報編集機能 no.6 ルートの設定？
+    resources :users, only: [:edit, :update]
    # get '' => '#edit'
 end
