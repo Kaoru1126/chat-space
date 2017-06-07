@@ -1,9 +1,7 @@
 @import "./reset";
 @import "font-awesome";
 @import "./sidebar";
-
-$white_text: #FFFFFF;
-$text_b: #434A54;
+@import "./variables";
 
 .head-bar {
   background-color: #38AEF0;
