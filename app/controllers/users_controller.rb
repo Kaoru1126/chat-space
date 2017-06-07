@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :authenticate_user!
+before_action :move_to_index, :except => [:index]
 
   def edit
     @user = User.find(params[:id])
@@ -7,8 +7,10 @@ before_action :authenticate_user!
 
   def update
     user = User.find(params [:id])
-    if user.user_id == current_user.id
+    if user.id == current_user.id
       user.update(user_params)
+    else
+      move_to_index
     end
   end
 
