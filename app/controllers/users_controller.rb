@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-before_action :move_to_index, :except => [:index]
+# before_action :move_to_index, :except => [:index]
 
   def edit
     @user = User.find(params[:id])
@@ -20,8 +20,8 @@ before_action :move_to_index, :except => [:index]
       params.require(:user).permit(:name, :email)
   end
 
-  def move_to_index
-      redirect_to action: :index unless user_signed_in?
-  end
+  # def move_to_index
+  #     redirect_to action: :index unless user_signed_in?
+  # end
 end
 

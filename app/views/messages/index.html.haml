@@ -4,7 +4,7 @@
     %ul
       %li.uname 16px bold #FFFFFF
       = link_to '', 'XXX', class:'fa fa-pencil-square-o'
-      = link_to '', 'edit_user_path', class:'fa fa-cog'
+      = link_to '', "/users/#{@user}/edit", class:'fa fa-cog'
     .side-bar__bottom
       .groupname 15px #FFFFFF
       .groupname__lastmsg めんばー１
@@ -38,4 +38,3 @@
       .writingbox__where おそらくテキストエリア 右側にボタンを作ろう
       .sendbuttonbox Send
       .pic <i class="fa fa-picture-o" aria-hidden="true"></i>
-      
