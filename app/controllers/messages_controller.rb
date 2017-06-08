@@ -8,9 +8,6 @@ class MessagesController < ApplicationController
     user = User.find(params [:id])
     if user.id == current_user.id
        user.update(name:user_params[:name], email:user_params[:email])
-       move_to_index
-    else
-       redirect_to actin: :edit
     end
   end
 
