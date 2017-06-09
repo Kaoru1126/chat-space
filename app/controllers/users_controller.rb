@@ -6,8 +6,11 @@ class UsersController < ApplicationController
   end
 
   def update
-    if @user == current_user.id
-       user.update(name:user_params[:name], email:user_params[:email])
+    if @user == current_user
+       @user.update(name:user_params[:name], email:user_params[:email])
+       redirect_to controller: :messages, action: :index
+      else
+      redirect_to edit_user_path(current_user)
       end
   end
 
