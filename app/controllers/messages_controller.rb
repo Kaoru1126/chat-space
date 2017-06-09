@@ -1,28 +1,9 @@
 class MessagesController < ApplicationController
+  # before_action :move_to_sign_in unless user_signed_in?
 
-  def edit
-    @user = User.find(params[:id])
-  end
-
-  def update
-    user = User.find(params [:id])
-    if user.id == current_user.id
-       user.update(name:user_params[:name], email:user_params[:email])
-    end
-  end
-
-  private
-  def user_params
-      params.require(:user).permit(:name, :email)
-  end
-
-  def move_to_index
-      redirect_to action: :index unless user_signed_in?
-  end
-
-  def index
+  def move_to_sign_in
+    redirect_to new_user_session
   end
 
 end
-
 
