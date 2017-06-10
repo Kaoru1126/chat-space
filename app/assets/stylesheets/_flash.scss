@@ -1,12 +1,14 @@
 .alert {
-    &__alert-notice {
-      background-color: $light_blue;
       color: $white_text;
       text-align: center;
+    &__alert-notice {
+      background-color: $light_blue;
+      // color: $white_text;
+      // text-align: center;
   }
     &__alert-error {
       background-color: $orange;
-      color: $white_text;
-      text-align: center;
+      // color: $white_text;
+      // text-align: center;
   }
 }
