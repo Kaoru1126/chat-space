@@ -1,0 +1,10 @@
+.alert {
+      color: $white_text;
+      text-align: center;
+    &__alert-notice {
+      background-color: $light_blue;
+  }
+    &__alert-error {
+      background-color: $orange;
+  }
+}
