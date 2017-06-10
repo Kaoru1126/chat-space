@@ -45,7 +45,7 @@
 
 | Column     | Type        | Options                     |
 |------------|-------------|-----------------------------|
-| name       | string      | null: false, unique: true   |
+| name       | string      | null: false                 |
 
 ### Association
 
