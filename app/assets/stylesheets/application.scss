@@ -1,17 +1,9 @@
+@import "./reset";
 @import "./variables";
 @import "./user";
-@import "./reset";
 @import "font-awesome";
 @import "./sidebar";
 @import "./flash";
-
-.head-bar {
-  background-color: #38AEF0;
-  color: white;
-  text-align: center;
-  height: 30px;
-  width: 100vw;
-}
 
 .chat_head {
   background-color: white;
