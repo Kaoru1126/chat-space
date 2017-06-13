@@ -1,0 +1,11 @@
+.side-bar
+  %ul
+    %li.uname 16px bold #FFFFFF
+    = link_to '', new_group_path, class:'fa fa-pencil-square-o'
+    = link_to '', edit_user_path(current_user), class:'fa fa-cog'
+  .side-bar__bottom
+    - @groups.each do |group|
+      %p.groupname
+        = group.name
+      %p.groupname__lastmsg ここには何かが入ります
+      
