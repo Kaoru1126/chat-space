@@ -18,6 +18,10 @@ class GroupsController < ApplicationController
   def edit
   end
 
+  # def index
+  # @group = current_user.groups
+  # end
+
   private
 
   def group_params
