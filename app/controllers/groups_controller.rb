@@ -1,6 +1,8 @@
 class GroupsController < ApplicationController
+
   def new
     @group = Group.new
+    current_user = @group
   end
 
   def create
@@ -17,10 +19,6 @@ class GroupsController < ApplicationController
 
   def edit
   end
-
-  # def index
-  # @group = current_user.groups
-  # end
 
   private
 
