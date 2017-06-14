@@ -14,5 +14,4 @@ class ApplicationController < ActionController::Base
     def move_to_sign_in
       user_session unless user_signed_in?
     end
-
 end
