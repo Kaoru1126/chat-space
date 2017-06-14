@@ -6,6 +6,4 @@ Rails.application.routes.draw do
     resources :users, only: [:edit, :update]
     resources :messages
     resources :groups, only: [:edit, :create, :new]
-    post "/groups/new" => "groups#create"
-
 end

@@ -2,7 +2,6 @@ class GroupsController < ApplicationController
 
   def new
     @group = Group.new
-    current_user = @group
   end
 
   def create
@@ -24,7 +23,4 @@ class GroupsController < ApplicationController
     params.require(:group).permit(:name, user_ids: [])
   end
 
-  def move_to_sign_in
-    user_session
-  end
 end
