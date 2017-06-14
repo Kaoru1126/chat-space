@@ -49,7 +49,7 @@
 
 ### Association
 
- - has_many :users, thorugh members
  - has_many :members
+ - has_many :users, thorugh members
  - has_many :messages
 
