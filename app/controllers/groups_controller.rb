@@ -6,7 +6,6 @@ class GroupsController < ApplicationController
   end
 
   def create
-    binding.pry
     @group = Group.new(group_params)
     if @group.save
       flash[:notice] = "グループを作成しました"
@@ -14,7 +13,7 @@ class GroupsController < ApplicationController
     else
      flash[:alert] = "グループの作成に失敗しました"
      render :new
-   end
+    end
   end
 
   def edit
