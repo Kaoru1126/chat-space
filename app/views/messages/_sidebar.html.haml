@@ -4,6 +4,7 @@
     = link_to '', new_group_path, class:'fa fa-pencil-square-o'
     = link_to '', edit_user_path(current_user), class:'fa fa-cog'
   .side-bar__bottom
-    .groupname 15px #FFFFFF
-    .groupname__lastmsg めんばー12
-    
+    - @groups.each do |group|
+      .groupname
+        = link_to group.name, group_messages_path(group)
+      .groupname__lastmsg 最新メッセ
