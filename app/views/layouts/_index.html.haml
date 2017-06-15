@@ -2,7 +2,9 @@
   = link_to 'Edit', edit_group_path(@group)
 .sampleG
   = @group.name
-.sampleG__under MEMBER: MEM_name1
+.sampleG__under
+  - @members.each do |member|
+    = member.user.name
 .chat-area
 .area
   %ul
@@ -28,4 +30,5 @@
 .writingbox
   .writingbox__where おそらくテキストエリア 右側にボタンを作ろう
   .sendbuttonbox Send
-  .pic <i class="fa fa-picture-o" aria-hidden="true"></i>
+  .pic
+    %i.fa.fa-picture-o
