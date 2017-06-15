@@ -1,0 +1,5 @@
+%body
+  = render 'layouts/sidebar'
+  - if @group.present?
+    .chat_head
+      = render 'layouts/index'
