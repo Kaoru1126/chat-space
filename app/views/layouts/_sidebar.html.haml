@@ -6,5 +6,5 @@
   .side-bar__bottom
     - @groups.each do |group|
       .groupname
-        = link_to "#{group.name}", group_messages_path(group)
+        = link_to group.name, group_messages_path(group)
       .groupname__lastmsg 最新メッセ
