@@ -1,7 +1,8 @@
 class GroupsController < ApplicationController
-  before_action :set_group
+  before_action :set_group, except: [:show, :create, :new, :index]
 
   def index
+    @groups = current_user.groups
   end
 
   def new
@@ -10,7 +11,6 @@ class GroupsController < ApplicationController
   end
 
   def edit
-    @group = Group.find(params[:id])
   end
 
   def create
@@ -36,9 +36,7 @@ class GroupsController < ApplicationController
   private
 
   def set_group
-    if params[:group_id].present?
-      @group = Group.find(params[:group_id])
-    end
+    @group = Group.find(params[:id])
   end
 
   def group_params
