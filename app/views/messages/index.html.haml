@@ -2,34 +2,4 @@
   = render 'messages/sidebar'
   - if @group.present?
     .chat_head
-      .Edit
-        = link_to 'Edit', edit_group_path(@group)
-      .sampleG
-        = @group.name
-      .sampleG__under MEMBER: MEM_name1
-      .chat-area
-      .area
-        %ul
-          %li.user usernameb4time
-          %li.timestamp 2017/06/05 15:03
-        %ul
-          %li.textinchat this is text in chat.
-        %ul
-          %li.user usernameb4time
-          %li.timestamp 2017/06/05 15:03
-        %ul
-          %li.textinchat this is text in chat.
-        %ul
-          %li.user usernameb4time
-          %li.timestamp 2017/06/05 15:03
-        %ul
-          %li.textinchat this is text in chat.
-        %ul
-          %li.user usernameb4time
-          %li.timestamp 2017/06/05 15:03
-        %ul
-          %li.textinchat this is text in chat.
-      .writingbox
-        .writingbox__where おそらくテキストエリア 右側にボタンを作ろう
-        .sendbuttonbox Send
-        .pic <i class="fa fa-picture-o" aria-hidden="true"></i>
+      = render 'layouts/index'
