@@ -50,3 +50,4 @@ gem 'erb2haml'
 gem "font-awesome-rails"
 gem 'pry-rails'
 gem 'devise'
+gem 'carrierwave', '~> 1.0'
