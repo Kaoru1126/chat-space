@@ -1,6 +1,6 @@
 class MessagesController < ApplicationController
-before_action :set_group
-before_action :set_message
+before_action :set_group, only: [:index]
+before_action :set_message,  only: [:create, :index]
 
   def index
     @messages = Message.order("id DESC")
