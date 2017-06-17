@@ -7,27 +7,13 @@ before_action :set_message,  only: [:create, :index]
   end
 
   def create
-    if @message = Message.create(message_params)
-       redirect_to action: :index
+       @message = Message.new(message_params)
+    if @message.save
+       redirect_to action: :index, notice: 'メッセージが送信されました'
     else
       flash[:alert] = "メッセージを入力して下さい"
       render :index
     end
-  end
-
-  def new
-  end
-
-  def edit
-  end
-
-  def show
-  end
-
-  def update
-  end
-
-  def destroy
   end
 
  private
