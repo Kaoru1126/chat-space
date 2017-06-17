@@ -1,5 +1,5 @@
 .Edit
-  = link_to 'Edit', edit_group_path(@group)
+  = link_to 'Edit', edit_group_path(@group), :class =>"upright"
 .sampleG
   = @group.name
 .sampleG__under
@@ -7,29 +7,22 @@
     = member.user.name
 .chat-area
 .area
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-.writingbox
-  .writingbox__where おそらくテキストエリア 右側にボタンを作ろう
-  .sendbuttonbox Send
-  .pic
-    %i.fa.fa-picture-o
-    
+  - @members.each do |member|
+    %ul
+      %li.user
+        = member.user.name
+      %li.timestamp timspatmps
+    %ul
+      %li.textinchat
+= form_for @message, :url => {:action => :create} do |f|
+  .writingbox__wrapper
+    .writingbox
+      .writingbox__where
+        = f.text_field :body, :placeholder => "this is palceholder", :class => "textingfield"
+      .sendbuttonbox
+        .submit_button#submit_button
+          = f.submit "Send", :class=>"btninindex"
+      .pic
+        %i.fa.fa-picture-o
+          = f.label :image, :class =>"msgimg" 
+          = f.file_field  :image, :class =>"massage_image" 
