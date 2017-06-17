@@ -1,5 +1,5 @@
 class MessagesController < ApplicationController
-before_action :set_group, only: [:index]
+before_action :set_group, only: [:index, :create]
 before_action :set_message,  only: [:create, :index]
 
   def index
@@ -7,11 +7,12 @@ before_action :set_message,  only: [:create, :index]
   end
 
   def create
-       @message = Message.new(message_params)
+    @message = Message.new(message_params)
     if @message.save
-       redirect_to action: :index, notice: 'メッセージが送信されました'
+       flash[:notice] = '送信されました'
+       redirect_to action: :index
     else
-      flash[:alert] = "メッセージを入力して下さい"
+      flash[:alert] = "メッセージかイメージを入力して下さい"
       render :index
     end
   end
