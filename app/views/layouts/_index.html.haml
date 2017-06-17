@@ -3,14 +3,14 @@
 .sampleG
   = @group.name
 .sampleG__under
-  - @members.each do |member|
-    = member.user.name
+  - @users.each do |user|
+    = user.name
 .chat-area
 .area
-  - @members.each do |member|
+  - @users.each do |user|
     %ul
       %li.user
-        = member.user.name
+        = user.name
       %li.timestamp timspatmps
     %ul
       %li.textinchat
