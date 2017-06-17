@@ -6,12 +6,12 @@ class ApplicationController < ActionController::Base
   before_action :authenticate_user!
   before_action :move_to_sign_in
 
-    def configure_permitted_parameters
-     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
-     devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email])
-    end
+  def configure_permitted_parameters
+   devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
+   devise_parameter_sanitizer.permit(:account_update, keys: [:name, :email])
+  end
 
-    def move_to_sign_in
-      user_session unless user_signed_in?
-    end
+  def move_to_sign_in
+    user_session unless user_signed_in?
+  end
 end
