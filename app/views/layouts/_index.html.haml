@@ -1,35 +1,4 @@
 .Edit
-  = link_to 'Edit', edit_group_path(@group)
+  = link_to 'Edit', edit_group_path(@group), :class =>"upright"
 .sampleG
   = @group.name
-.sampleG__under
-  - @members.each do |member|
-    = member.user.name
-.chat-area
-.area
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-  %ul
-    %li.user usernameb4time
-    %li.timestamp 2017/06/05 15:03
-  %ul
-    %li.textinchat this is text in chat.
-.writingbox
-  .writingbox__where おそらくテキストエリア 右側にボタンを作ろう
-  .sendbuttonbox Send
-  .pic
-    %i.fa.fa-picture-o
-    
