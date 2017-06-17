@@ -2,27 +2,4 @@
   = link_to 'Edit', edit_group_path(@group), :class =>"upright"
 .sampleG
   = @group.name
-.sampleG__under
-  - @users.each do |user|
-    = user.name
-.chat-area
-.area
-  - @users.each do |user|
-    %ul
-      %li.user
-        = user.name
-      %li.timestamp timspatmps
-    %ul
-      %li.textinchat
-= form_for @message, :url => {:action => :create} do |f|
-  .writingbox__wrapper
-    .writingbox
-      .writingbox__where
-        = f.text_field :body, :placeholder => "this is palceholder", :class => "textingfield"
-      .sendbuttonbox
-        .submit_button#submit_button
-          = f.submit "Send", :class=>"btninindex"
-      .pic
-        %i.fa.fa-picture-o
-          = f.label :image, :class =>"msgimg" 
-          = f.file_field  :image, :class =>"massage_image" 
+  
