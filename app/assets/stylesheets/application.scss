@@ -28,22 +28,13 @@
     }
 }
 
-.Edit {
-  color: blue;
-  text-align: right;
-  margin-top: 28px;
-  margin-right: 60px;
-  margin-left: 20px;
-  float: right;
-  line-height: 20px;
-}
 
 .area {
   background-color: #AAAAAA;
   height: calc(100vh - writingbox);
   min-height: calc(600px - 110px);
   width: calc(100vw - 380px);
-  float: left;
+  // float: left;
   padding-top: 46px;
   padding-left: 40px;
   padding-right: 40px;
@@ -70,14 +61,22 @@
   margin-bottom: 40px;
 }
 
+.writingbox__wrapper {
+  background-color: #DDDDDD;
+  width: calc(100vw - 300px);
+  height: 90px;
+
+}
+
 .writingbox {
   width: calc(100vw - 380px);
+  background-color: white;
   margin-bottom: 20px;
   margin-top: 20px;
   margin-right: 40px;
   margin-left: 40px;
   overflow: auto;
-  border: solid 1px;
+  border: none;
     &__where {
       font-size: 16px;
       color: $text_b;
@@ -97,12 +96,43 @@
 
 .sendbuttonbox {
   background-color: #38AEF0;
-  color: white;
+  // color: white;
   height: 50px;
   width: 100px;
   float: right;
   text-align: center;
-  line-height: 50px;
+  // line-height: 50px;
   margin-left: 15px;
+}
+
+.btninindex {
+background-color: $light-blue;
+color: #fff;
+border-style: none;
+margin-top: 13px;
+}
+
+.msgimg {
+  display:none;
+}
+
+.massage_image {
+  display:none;
+}
+
+.textingfield {
+  width: calc(1039px - 170px);
+  height: 50px;
+  border: none;
+}
+
+.upright {
+  color: blue;
+  text-align: right;
+  margin-top: 28px;
+  margin-right: 60px;
+  margin-left: 20px;
+  float: right;
+  line-height: 20px;
 }
 
