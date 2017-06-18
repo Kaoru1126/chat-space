@@ -79,6 +79,7 @@
   margin-left: 40px;
   overflow: auto;
   border: none;
+  float: left;
     &__where {
       font-size: 16px;
       color: $text_b;
@@ -98,12 +99,10 @@
 
 .sendbuttonbox {
   background-color: #38AEF0;
-  // color: white;
   height: 50px;
   width: 100px;
   float: right;
   text-align: center;
-  // line-height: 50px;
   margin-left: 15px;
 }
 
@@ -119,7 +118,8 @@ margin-top: 13px;
 }
 
 .textingfield {
-  width: calc(1039px - 220px);
+  width: calc(1000px - 180px);
+  // min-width: 350px;
   height: 50px;
   border: none;
 }
