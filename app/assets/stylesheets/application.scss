@@ -6,6 +6,7 @@
 @import "./flash";
 @import "./group";
 
+
 .chat_head {
   background-color: white;
   height: 100px;
@@ -31,10 +32,11 @@
 
 .area {
   background-color: #AAAAAA;
-  height: calc(100vh - writingbox);
+  height: calc(700px - writingbox__wrapper);
+  max-height: 500px;
   min-height: calc(600px - 110px);
   width: calc(100vw - 380px);
-  // float: left;
+  overflow: scroll;
   padding-top: 46px;
   padding-left: 40px;
   padding-right: 40px;
@@ -123,12 +125,14 @@ margin-top: 13px;
 }
 
 .upright {
-  color: blue;
+  color: $light-blue;
   text-align: right;
   margin-top: 28px;
-  margin-right: 60px;
+  margin-right: 40px;
   margin-left: 20px;
   float: right;
   line-height: 20px;
+  border: 2px solid;
+  padding: 10px 20px 10px 20px;
 }
 

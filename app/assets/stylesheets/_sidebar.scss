@@ -7,6 +7,8 @@
      width: 300px;
      height: calc(100vh - 10%);
      background-color: #2f3e51;
+     max-height: 650px;
+     overflow: scroll;
      }
 }
 ul {
