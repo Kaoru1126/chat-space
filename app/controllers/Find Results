@@ -1,0 +1,55 @@
+Searching 5529 files for "@groups"
+
+/Users/kaoru_mbp/projects/chat-space/app/controllers/groups_controller.rb:
+    3  
+    4    def index
+    5:     @groups = current_user.groups
+    6    end
+    7  
+
+/Users/kaoru_mbp/projects/chat-space/app/controllers/messages_controller.rb:
+   26      # - @members.each do |member| ←/index.html.haml内に書いてある
+   27      # = member.user.name          ←/index.html.haml内に書いてある
+   28:     @groups = current_user.groups
+   29    end
+   30  
+
+/Users/kaoru_mbp/projects/chat-space/app/views/layouts/_sidebar.html.haml:
+    6      = link_to '', edit_user_path(current_user), class:'fa fa-cog'
+    7    .side-bar__bottom
+    8:     - @groups.each do |group|
+    9        .groupname
+   10          = link_to group.name, group_messages_path(group)
+
+/Users/kaoru_mbp/projects/chat-space/app/views/messages/_sidebar.html.haml:
+    6      = link_to '', edit_user_path(current_user), class:'fa fa-cog'
+    7    .side-bar__bottom
+    8:     - @groups.each do |group|
+    9        .groupname
+   10          = link_to group.name, group_messages_path(group)
+
+/Users/kaoru_mbp/projects/chat-space/log/development.log:
+    <binary>
+
+90 matches across 5 files
+
+
+Searching 5529 files for "@users"
+
+/Users/kaoru_mbp/projects/chat-space/app/controllers/messages_controller.rb:
+   31    def set_group
+   32      @group = Group.find(params[:group_id])
+   33:     @users = @group.users.order("id ASC")
+   34    end
+   35  
+
+/Users/kaoru_mbp/projects/chat-space/app/views/layouts/_groupname.html.haml:
+    1  .head-groupname__under
+    2:   - @users.each do |user|
+    3      = user.name
+    4  
+
+/Users/kaoru_mbp/projects/chat-space/log/development.log:
+    <binary>
+
+8 matches across 3 files
