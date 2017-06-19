@@ -5,10 +5,10 @@
       %li.user
         = message.user.name
       %li.timestamp
-        = message.user.created_at
+        = message.created_at
       %li.textinchat
         = message.body
-        = image_tag message.image.to_s
+        = image_tag message.image
 = form_for @message, :url => {:action => :create} do |f|
   .writingbox__wrapper
     .writingbox
