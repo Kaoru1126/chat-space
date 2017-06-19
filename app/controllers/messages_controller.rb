@@ -1,9 +1,9 @@
 class MessagesController < ApplicationController
-before_action :set_group, only: [:index, :create]
-before_action :to_display_users_groups, only: [:index, :create]
-before_action :set_message,  only: [:index, :create]
+before_action :set_usernames, only: [:index, :create]
+before_action :set_groups, only: [:index, :create]
 
   def index
+    @message = Message.new
     @messages = @group.messages
   end
 
@@ -21,20 +21,16 @@ before_action :set_message,  only: [:index, :create]
 
  private
 
-  def to_display_users_groups
+  def set_groups
     # indexにユーザー名を出すためのやつ
     # - @members.each do |member| ←/index.html.haml内に書いてある
     # = member.user.name          ←/index.html.haml内に書いてある
     @groups = current_user.groups
   end
 
-  def set_group
+  def set_usernames
     @group = Group.find(params[:group_id])
     @users = @group.users.order("id ASC")
-  end
-
-  def set_message
-    @message = Message.new
   end
 
   def message_params
