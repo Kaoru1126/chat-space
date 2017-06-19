@@ -8,7 +8,7 @@ class UsersController < ApplicationController
   def update
     if @user == current_user
        @user.update(user_params)
-       redirect_to controller: :messages, action: :index
+       redirect_to controller: :groups, action: :index
       else
        render action: :edit
       end
