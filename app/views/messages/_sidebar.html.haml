@@ -1,10 +1,16 @@
 .side-bar
   %ul
-    %li.uname 16px bold #FFFFFF
+    %li.uname sidebar_messages
     = link_to '', new_group_path, class:'fa fa-pencil-square-o'
     = link_to '', edit_user_path(current_user), class:'fa fa-cog'
   .side-bar__bottom
     - @groups.each do |group|
       .groupname
         = link_to group.name, group_messages_path(group)
-      .groupname__lastmsg 最新メッセ
+      .groupname__lastmsg
+        - if group.messages.last.image.present?
+          = "画像が添付されました"
+        -elsif group.messages.last.body.present?
+          = group.messages.last.body
+        -else
+          = "新着メッセージはありません"
