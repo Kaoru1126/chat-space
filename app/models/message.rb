@@ -1,11 +1,11 @@
 class Message < ApplicationRecord
   belongs_to :user
 
-  validates :body, length: { minimum: 1 }, if: :image_nil
-
-  def image_nil
-    image.file.nil?
-  end
+  validates :body, presence: {if: 'image.blank?' }
+  validates :image, presence:  {if: 'body.blank?' }
+  validates :group_id, presence: true
+  validates :user_id, presence: true
 
   mount_uploader :image, ImageUploader
+
 end
