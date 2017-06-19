@@ -1,12 +1,14 @@
 .chat-area
 .area
-  - @users.each do |user|
+  - @messages.each do |message|
     %ul
       %li.user
-        = user.name
-      %li.timestamp timspatmps
-    %ul
+        = message.user.name
+      %li.timestamp
+        = message.created_at
       %li.textinchat
+        = message.body
+        = image_tag message.image
 = form_for @message, :url => {:action => :create} do |f|
   .writingbox__wrapper
     .writingbox

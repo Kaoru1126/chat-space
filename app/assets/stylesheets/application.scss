@@ -6,6 +6,7 @@
 @import "./flash";
 @import "./group";
 
+
 .chat_head {
   background-color: white;
   height: 100px;
@@ -15,7 +16,7 @@
   border-bottom: 1px solid #eeeeee;
 }
 
-.sampleG {
+.head-groupname {
   font-size: 20px;
   color:#333333;
   margin-top: 35px;
@@ -31,10 +32,11 @@
 
 .area {
   background-color: #AAAAAA;
-  height: calc(100vh - writingbox);
+  height: calc(700px - writingbox__wrapper);
+  max-height: 500px;
   min-height: calc(600px - 110px);
   width: calc(100vw - 380px);
-  // float: left;
+  overflow: scroll;
   padding-top: 46px;
   padding-left: 40px;
   padding-right: 40px;
@@ -77,6 +79,7 @@
   margin-left: 40px;
   overflow: auto;
   border: none;
+  float: left;
     &__where {
       font-size: 16px;
       color: $text_b;
@@ -96,12 +99,10 @@
 
 .sendbuttonbox {
   background-color: #38AEF0;
-  // color: white;
   height: 50px;
   width: 100px;
   float: right;
   text-align: center;
-  // line-height: 50px;
   margin-left: 15px;
 }
 
@@ -117,18 +118,20 @@ margin-top: 13px;
 }
 
 .textingfield {
-  width: calc(1039px - 220px);
+  width: calc(1000px - 180px);
   height: 50px;
   border: none;
 }
 
 .upright {
-  color: blue;
+  color: $light-blue;
   text-align: right;
   margin-top: 28px;
-  margin-right: 60px;
+  margin-right: 40px;
   margin-left: 20px;
   float: right;
   line-height: 20px;
+  border: 2px solid;
+  padding: 10px 20px 10px 20px;
 }
 

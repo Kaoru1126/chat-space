@@ -1,9 +1,10 @@
 class MessagesController < ApplicationController
-before_action :set_group, only: [:index, :create]
-before_action :set_message,  only: [:create, :index]
+before_action :set_usernames, only: [:index, :create]
+before_action :set_groups, only: [:index, :create]
 
   def index
-    @messages = Message.order("id DESC")
+    @message = Message.new
+    @messages = @group.messages
   end
 
   def create
@@ -15,22 +16,21 @@ before_action :set_message,  only: [:create, :index]
       flash[:alert] = "メッセージかイメージを入力して下さい"
       render :index
     end
+    @messages = @group.messages
   end
 
  private
 
-  def set_group
-    @groups = current_user.groups
+  def set_groups
     # indexにユーザー名を出すためのやつ
     # - @members.each do |member| ←/index.html.haml内に書いてある
     # = member.user.name          ←/index.html.haml内に書いてある
-
-    @group = Group.find(params[:group_id])
-    @users = @group.users.order("id DESC")
+    @groups = current_user.groups
   end
 
-  def set_message
-    @message = Message.new
+  def set_usernames
+    @group = Group.find(params[:group_id])
+    @users = @group.users.order("id ASC")
   end
 
   def message_params

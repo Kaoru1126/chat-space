@@ -5,8 +5,10 @@
   background-color: #253241;
      &__bottom {
      width: 300px;
-     height: calc(100vh - 10%);
+     height: 100vh;
      background-color: #2f3e51;
+     max-height: 640px;
+     overflow: scroll;
      }
 }
 ul {
