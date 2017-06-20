@@ -26,34 +26,20 @@ describe MessagesController, type: :controller do
           expect(assigns(:group)).to eq group
         end
 
-# ==============================================
         it "アクション内で定義済みの@messagesがある" do
-          # binding.pry
-          messages = 
+          messages = group.messages
           expect(assigns(:messages)).to eq messages
         end
-        #@messaegesの中身
-        # @group = Group.find(params[:group_id])
-        # @messages = @group.messages
 
-# ==============================================
         it "アクション内で定義済み@groupsがある？" do
-          # binding.pry
-          groups =
-          expect(current_user.groups).to eq groups
+          groups = user.groups
+          expect(assigns(:groups)).to eq groups
         end
-        # @groupsの中身
-        # @groups = current_user.groups
-# ==============================================
+
         it "アクション内で定義済みの@usersがある？" do
-          # binding.pry
-          users = 
+          users = group.users
           expect(assigns(:users)).to eq users
         end
-        # @usersの中身
-        # @group = Group.find(params[:group_id])
-        # @users = @group.users.order("id ASC")
-# ==============================================
 
         it "インデックス画面に遷移するか？" do
           expect(response).to render_template :index
@@ -68,7 +54,7 @@ describe MessagesController, type: :controller do
       end
     end
 
-    #メッセージを作成するアクション
+    #メッセージ作成のアクション(POST #CREATE)
     describe 'POST #create' do
       before :each do
         login_user user
@@ -117,4 +103,3 @@ describe MessagesController, type: :controller do
       end
     end
 end
-
