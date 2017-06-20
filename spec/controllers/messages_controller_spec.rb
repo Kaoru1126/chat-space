@@ -5,14 +5,13 @@ describe MessagesController, type: :controller do
   let(:group) { create(:group) }
   let(:message) { build(:message, user_id: user.id, group_id: group.id) }
 
-    #メッセージ一覧をindexアクション
     describe 'GET #index' do
       context "ログインしているユーザー" do
-        #ログイン状態
+
         before do
           login_user user
         end
-        #共通のメソッド
+
         before :each do
           get :index, params: { group_id: group.id }
         end
@@ -54,7 +53,6 @@ describe MessagesController, type: :controller do
       end
     end
 
-    #メッセージ作成のアクション(POST #CREATE)
     describe 'POST #create' do
       before :each do
         login_user user
