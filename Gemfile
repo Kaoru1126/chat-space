@@ -37,6 +37,8 @@ group :development, :test do
   gem 'byebug'
   gem 'rspec-rails'
   gem 'factory_girl_rails', "~> 4.4.1"
+  gem 'pry-rails'
+  gem 'rails-controller-testing'
 end
 
 group :development do
@@ -50,7 +52,6 @@ end
   gem 'haml'
   gem 'erb2haml'
   gem "font-awesome-rails"
-  gem 'pry-rails'
   gem 'devise'
   gem 'carrierwave', '~> 1.0'
   gem 'mini_magick'
