@@ -5,7 +5,25 @@ require File.expand_path('../../config/environment', __FILE__)
 # Prevent database truncation if the environment is production
 abort("The Rails environment is running in production mode!") if Rails.env.production?
 require 'rspec/rails'
+
 # Add additional requires below this line. Rails is not loaded until this point!
+require 'devise'
+require File.expand_path("spec/support/controller_macros.rb")
+
+
+RSpec.configure do |config|
+
+# deviseのテストヘルパーをロードする
+  config.include Devise::TestHelpers, :type => :controller
+# 作成したログインモジュールを追加する
+  config.include ControllerMacros, :type => :controller
+end
+
+# どっちかいらない
+RSpec.configure do |config|
+  config.include Devise::TestHelpers, type: :controller
+  config.include ControllerMacros, type: :controller
+end
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
 # spec/support/ and its subdirectories. Files matching `spec/**/*_spec.rb` are
@@ -59,6 +77,5 @@ RSpec.configure do |config|
   # fixtureのパス指定の記載
   # imageのテストに必要
   config.fixture_path = "#{::Rails.root}/spec/fixtures"
-
-
 end
+
