@@ -17,26 +17,26 @@ describe MessagesController, type: :controller do
           get :index, params: { group_id: group.id }
         end
 
-        it "アクション内で定義済みの@messageがある" do
+        it "アクション内で定義済みの@messageが存在する" do
           message = Message.new
           expect(assigns(:message)).to be_a_new Message
         end
 
-        it "アクション内で定義済み@groupがある" do
+        it "アクション内で定義済み@groupが存在する" do
           expect(assigns(:group)).to eq group
         end
 
-        it "アクション内で定義済みの@messagesがある" do
+        it "アクション内で定義済みの@messagesが存在する" do
           messages = group.messages
           expect(assigns(:messages)).to eq messages
         end
 
-        it "アクション内で定義済み@groupsがある" do
+        it "アクション内で定義済み@groupsが存在する" do
           groups = user.groups
           expect(assigns(:groups)).to eq groups
         end
 
-        it "アクション内で定義済みの@usersがある" do
+        it "アクション内で定義済みの@usersが存在する" do
           users = group.users
           expect(assigns(:users)).to eq users
         end
