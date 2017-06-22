@@ -12,8 +12,8 @@ before_action :set_groups, only: [:index, :create]
     if @message.save
        @messages = @group.messages
       respond_to do |format|
-        format.html { render :index, notice: "メッセージを送信しました"}  #書き方？
-        format.json            #なにをいれる？
+        format.html { render :index, notice: "メッセージを送信しました"}
+        format.json
       end
        flash[:notice] = '送信されました' #ここどうすべき？非同期でもだす？
     else

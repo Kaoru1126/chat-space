@@ -9,7 +9,7 @@ $(function() {
                       return messageBody + "<li><img src=" + message.image.url + "></li>";
     }
   }
-  
+
 // フォームをクリアする記述
   function clearingForm() {
     $('.textingfield').val("");
@@ -38,9 +38,6 @@ $(function() {
     })
 // done、テキストとファイルを投稿&テキスト入力欄クリア、スクロール呼び出し
     .done(function(message){
-      debugger;
-      // e.preventDefault();
-      // console.log(message);
       var html = buildHTML(message);
       $('.start').append(html);
       clearingForm();
