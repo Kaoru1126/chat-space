@@ -1,15 +1,18 @@
 .chat-area
 .area
-  - @messages.each do |message|
-    %ul
-      %li.user
-        = message.user.name
-      %li.timestamp
-        = message.created_at
-      %li.textinchat
-        = message.body
-        = image_tag message.image
-= form_for @message, :url => {:action => :create} do |f|
+  .start.js-messages
+    - @messages.each do |message|
+      %ul
+        %li.user
+          = message.user.name
+        %li.timestamp
+          = message.created_at
+        %li.textinchat
+          = message.body
+        %li.textinchat
+          = image_tag message.image
+  .end#end
+= form_for [@group, @message],  html: {id: 'btninindex'} do |f|
   .writingbox__wrapper
     .writingbox
       .writingbox__where
@@ -19,5 +22,5 @@
           = f.submit "Send", :class=>"btninindex"
       .pic
         %i.fa.fa-picture-o
-          = f.label :image, :class =>"msgimg" 
-          = f.file_field  :image, :class =>"massage_image" 
+          = f.label :image, :class =>"msgimg"
+          = f.file_field  :image, :class =>"massage_image"
