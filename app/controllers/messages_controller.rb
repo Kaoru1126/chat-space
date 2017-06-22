@@ -10,13 +10,17 @@ before_action :set_groups, only: [:index, :create]
   def create
     @message = Message.new(message_params)
     if @message.save
-       flash[:notice] = '送信されました'
-       redirect_to action: :index
+       @messages = @group.messages
+      respond_to do |format|
+        format.html { render :index, notice: "メッセージを送信しました"}
+        format.json
+      end
+       flash[:notice] = '送信されました' #ここどうすべき？非同期でもだす？
     else
       flash[:alert] = "メッセージかイメージを入力して下さい"
+      @messages = @group.messages
       render :index
     end
-    @messages = @group.messages
   end
 
  private
