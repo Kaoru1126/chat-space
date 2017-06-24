@@ -4,9 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-validates :name, presence: true, uniqueness: true
+  validates :name, presence: true, uniqueness: true
 
-has_many :members
-has_many :groups, through: :members
+  has_many :members
+  has_many :groups, through: :members
 
+  scope :get_names, ->(keyword) { where('name LIKE(?)', "#{keyword}%") }
 end

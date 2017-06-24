@@ -77,7 +77,7 @@
     }
   }
 
-  .chat-group-user {
+  .chat-group-user,#chat-group-users {
     padding: 0 15px;
     line-height: 50px;
     font-size: 14px;
@@ -90,6 +90,8 @@
 
     .chat-group-user__name {
       float: left;
+      list-style: none;
+      
     }
 
     .chat-group-user__btn {
