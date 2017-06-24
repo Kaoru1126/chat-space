@@ -7,11 +7,7 @@ class Group < ApplicationRecord
 
   def self.last_message(group)
     if group.messages.present?
-      if group.messages.last.image.present?
-        return "画像が添付されました"
-      else group.messages.last.body.present?
-        return group.messages.last.body
-      end
+      group.messages.last.image.present? ? "画像が添付されました" : group.messages.last.body
     else
       return "新着メッセージはありません"
     end
