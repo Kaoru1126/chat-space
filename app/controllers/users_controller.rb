@@ -2,6 +2,13 @@ class UsersController < ApplicationController
  before_action :move_to_sign_in
  before_action :set_user
 
+  def index
+    @users = User.where('name LIKE(?)', "#{params[:keyword]}%").order('name ASC')
+      respond_to do |format|
+        format.json { render 'index', json: @users }
+      end
+  end
+
   def edit
   end
 
@@ -16,7 +23,9 @@ class UsersController < ApplicationController
 
   private
   def set_user
+    if params[:id] != nil
      @user = User.find(params[:id])
+    end
   end
 
   def user_params
