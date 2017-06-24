@@ -31,7 +31,6 @@
         = f.label :user_search, "チャットメンバー", class: "chat-group-form__label"
       .chat-group-form__field--right
         #chat-group-users
-        %input{ name: "group[user_ids][]", type: "hidden", value: " #{ current_user.id } " }
       .chat-group-form__field--right#user-search-result2
         %ul
           %li
