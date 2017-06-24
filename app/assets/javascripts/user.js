@@ -30,15 +30,13 @@ $(function(){
     })
      .done(function(user){
      $('#removehere').children().remove();
-       var $form = $('#user-search-field')
-       $form.empty();
        $(user).each(function(i, user){
         var addingUser = buildHTMLForUserSearch(user)
          $('#removehere').append(addingUser);
        });
      })
 
-     .fail(function(a, b, c){
+     .fail(function(){
        alert('ユーザー検索に失敗しました。');
      });
    });
@@ -55,10 +53,3 @@ $(function(){
      })
  });
 
-// ルーティングなどAPI側の準備をする
-// テキストフィールドを作成する
-// テキストフィールドに入力されるたびにイベントが発火するようにする
-// イベント時に非同期通信できるようにする
-// 非同期通信の結果を得て、HTMLを作成する
-// 5で作成したHTMLをビュー上に追加する
-// エラー時の処理を行う
