@@ -1,5 +1,1 @@
-json.array! @users do |user|
-  json.id          user.id
-  json.names       user.name
-end
-
+json.array! @users, :id, :name

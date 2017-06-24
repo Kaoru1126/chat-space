@@ -3,9 +3,9 @@ class UsersController < ApplicationController
 
   def index
     @users = User.get_names(search_params).order('name ASC')
-      respond_to do |format|
-        format.json { render 'index', json: @users }
-      end
+    respond_to do |format|
+      format.json
+    end
   end
 
   def edit
