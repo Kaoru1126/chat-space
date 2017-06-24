@@ -1,9 +1,8 @@
 class UsersController < ApplicationController
- before_action :move_to_sign_in
- before_action :set_user
+ before_action :set_user, only: [:update]
 
   def index
-    @users = User.where('name LIKE(?)', "#{params[:keyword]}%").order('name ASC')
+    @users = User.get_names(search_params).order('name ASC')
       respond_to do |format|
         format.json { render 'index', json: @users }
       end
@@ -30,6 +29,10 @@ class UsersController < ApplicationController
 
   def user_params
       params.require(:user).permit(:name, :email)
+  end
+
+  def search_params
+     params.require(:keyword)
   end
 
   def move_to_sign_in
