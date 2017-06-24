@@ -12,7 +12,7 @@ $(function(){
   function newAdding(id, name){
 
     var newClearfix = '<div class="chat-group-user clearfix">'
-    var newuserName = '<li chat-group-user__name>' + name + '</li>'
+    var newuserName = '<li chat-group-user__name style="display:inline">' + name + '</li>'
     var deleteBtn = '<a class = "user-search-remove chat-group-user__btn chat-group-user__btn--remove js-remove-btn"> 削除 </a>' + '<input name="group[user_ids][]" type="hidden" value="' + id + '"></input></div>'
     var newAdding = newClearfix + newuserName + deleteBtn;
      return newAdding;
