@@ -15,7 +15,7 @@ before_action :set_groups, only: [:index, :create]
         format.html { render :index, notice: "メッセージを送信しました"}
         format.json
       end
-       flash[:notice] = '送信されました' #ここどうすべき？非同期でもだす？
+       flash[:notice] = '送信されました'
     else
       flash[:alert] = "メッセージかイメージを入力して下さい"
       @messages = @group.messages
