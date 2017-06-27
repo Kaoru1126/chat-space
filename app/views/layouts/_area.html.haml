@@ -1,7 +1,7 @@
 .chat-area
 .area
-  .start.js-messages
-    - @messages.each do |message|
+  - @messages.each do |message|
+    .js-messages{data: {"message-id": message.id }}
       %ul
         %li.user
           = message.user.name
@@ -16,7 +16,7 @@
   .writingbox__wrapper
     .writingbox
       .writingbox__where
-        = f.text_field :body, :placeholder => "this is palceholder", :class => "textingfield"
+        = f.text_field :body, :placeholder => "this is placeholder", :class => "textingfield"
       .sendbuttonbox
         .submit_button#submit_button
           = f.submit "Send", :class=>"btninindex"
