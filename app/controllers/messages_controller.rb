@@ -5,6 +5,10 @@ before_action :set_groups, only: [:index, :create]
   def index
     @message = Message.new
     @messages = @group.messages
+      respond_to do |format|
+        format.html
+        format.json
+      end
   end
 
   def create
