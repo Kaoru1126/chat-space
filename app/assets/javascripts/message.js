@@ -1,14 +1,21 @@
 $(function() {
 
   function buildHTML(message) {
+    var onlyImage = '<div class="js-messages" message-id="' + message.id + '">'
+                  + '<ui><li class="user">' + message.userName + '</li>'
+                  + '<li class="timestamp">' + message.createdAt + '</li>'
+                  + "<li><img src=" + message.image.url + "></li></div>";
+
     var messageBody = '<div class="js-messages" message-id="' + message.id + '">'
                     + '<ui><li class="user">' + message.userName + '</li>'
                     + '<li class="timestamp">' + message.createdAt + '</li>'
                     + '<li class="textinchat">' + message.body + '</li></div>';
-                    if (message.image.url == null) {
+                     if (message.image.url == null) {
                       return messageBody;
+                    } else if (message.image.url != null && message.body == null) {
+                      return onlyImage;
                     } else {
-                    return messageBody + "<li><img src=" + message.image.url + "></li>";
+                      return messageBody + "<li><img src=" + message.image.url + "></li>";
     }
   }
 
