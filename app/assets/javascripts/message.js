@@ -1,21 +1,20 @@
 $(function() {
 
+//   画像のみのときにのみ定義されるようにしましょう。
+// 使用しないときは無駄な変数の定義になってしまうので。
+
   function buildHTML(message) {
-    var onlyImage = '<div class="js-messages" message-id="' + message.id + '">'
-                  + '<ui><li class="user">' + message.userName + '</li>'
-                  + '<li class="timestamp">' + message.createdAt + '</li>'
-                  + "<li><img src=" + message.image.url + "></li></div>";
+    if (message.image.url != null) {
+       var image = "<li><img src=" + message.image.url + "></li>"
+      } else if (message.image.url == null) {
+       var image = ""}
 
     var messageBody = '<div class="js-messages" message-id="' + message.id + '">'
                     + '<ui><li class="user">' + message.userName + '</li>'
                     + '<li class="timestamp">' + message.createdAt + '</li>'
                     + '<li class="textinchat">' + message.body + '</li></div>';
-                     if (message.image.url == null) {
-                      return messageBody;
-                    } else if (message.image.url != null && message.body == null) {
-                      return onlyImage;
-                    } else {
-                      return messageBody + "<li><img src=" + message.image.url + "></li>";
+                    + image
+                    return messageBody;
     }
   }
 
