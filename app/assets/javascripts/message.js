@@ -75,6 +75,6 @@ $(function() {
       });
     } else {
     clearInterval(interval);
-    }} , 10 * 1000 );
+    }} , 15 * 1000 );
 });
 
