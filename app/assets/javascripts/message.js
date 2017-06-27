@@ -61,7 +61,6 @@ $(function() {
     .done(function(data) {
       var id = $(".js-messages").last().data("messageid");
       var addingHTML = '';
-      console.log("更新中");
       $(".js-messages").remove();
       data.messages.forEach(function(message) {
         addingHTML = buildHTML(message);
